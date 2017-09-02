@@ -21,6 +21,7 @@ class LinkSlotsAPI extends PluginBase {
     public $data;
 
     public function onEnable() {
+        self::$instance = $this;
         $this->getLogger()->debug("LinkSlotsAPI enabled.");
     }
 
