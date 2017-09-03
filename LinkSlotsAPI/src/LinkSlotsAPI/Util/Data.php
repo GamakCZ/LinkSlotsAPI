@@ -44,9 +44,21 @@ class Data {
         $webAPI = LinkSlotsAPI::WEB_API;
         $webAPI = str_replace("%adress", $this->ip, $webAPI);
         $webAPI = str_replace("%port", $this->port, $webAPI);
-        $file = file_get_contents($webAPI);
-        $data = json_decode($file);
-        $this->players = $data["players"]["online"];
+        try {
+            $file = file_get_contents($webAPI);
+            $data = json_decode($file);
+            $this->players = $data["players"]["online"];
+        }
+        catch (\Exception $exception) {
+            $this->plugin->getLogger()->critical("§cCan not refresh slots.");
+            $this->plugin->getLogger()->debug("§7Error: §6".$exception->getMessage()."\n§7File: §6".
+            $exception->getFile()."\n§7Line: §6".
+            $exception->getLine()."\n§7Code: §6".
+            $exception->getCode());
+            $dump = var_dump(json_decode(file_get_contents($webAPI)));
+            $this->plugin->getLogger()->debug("§7FILE: {$dump}");
+        }
+
     }
 
     /**

@@ -12,7 +12,7 @@ use pocketmine\plugin\PluginBase;
  */
 class LinkSlotsAPI extends PluginBase {
 
-    const WEB_API = "https://use.gameapis.net/mcpe/query/players/%adress:%port";
+    const WEB_API = "use.gameapis.net/mcpe/query/players/%adress:%port";
 
     /** @var  LinkSlotsAPI $instance */
     static $instance;
