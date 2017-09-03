@@ -4,6 +4,7 @@ namespace LinkSlotsAPI\Util;
 
 use LinkSlotsAPI\LinkSlotsAPI;
 use LinkSlotsAPI\Task\RefreshDataTask;
+use pocketmine\utils\Utils;
 
 /**
  * Class Data
@@ -45,7 +46,7 @@ class Data {
         $webAPI = str_replace("%adress", $this->ip, $webAPI);
         $webAPI = str_replace("%port", $this->port, $webAPI);
         try {
-            $file = file_get_contents($webAPI);
+            $file = Utils::getURL($webAPI);
             $data = json_decode($file);
             $this->players = $data["players"]["online"];
         }
