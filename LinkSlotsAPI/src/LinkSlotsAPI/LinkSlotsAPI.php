@@ -8,7 +8,7 @@ use pocketmine\plugin\PluginBase;
 
 /**
  * Class LinkSlotsAPI
- * @package LinkSlotsAPI
+ * @package linkslotsapi
  * @author VixikCZ
  */
 class LinkSlotsAPI extends PluginBase { public function onEnable() {} }
