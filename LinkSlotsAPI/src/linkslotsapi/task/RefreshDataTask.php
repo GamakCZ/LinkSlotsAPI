@@ -33,5 +33,7 @@ class RefreshDataTask extends AsyncTask {
         }
     }
 
-    public function onRun() {}
+    public function onRun() {
+        $this->setResult("text");
+    }
 }
