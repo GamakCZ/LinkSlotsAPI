@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace linkslotsapi;
 
 use pocketmine\plugin\PluginBase;
@@ -9,4 +11,4 @@ use pocketmine\plugin\PluginBase;
  * @package LinkSlotsAPI
  * @author VixikCZ
  */
-class LinkSlotsAPI extends PluginBase {}
+class LinkSlotsAPI extends PluginBase { public function onEnable() {} }
