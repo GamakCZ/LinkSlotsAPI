@@ -1,6 +1,6 @@
 <?php
 
-namespace LinkSlotsAPI\Task;
+namespace linkslotsapi\task;
 
 use linkslotsapi\API;
 use pocketmine\scheduler\AsyncTask;
